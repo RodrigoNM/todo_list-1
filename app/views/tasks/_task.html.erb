@@ -1,3 +1,4 @@
 <p>
   <%= task.title%>
 </p>
+<%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"} %>

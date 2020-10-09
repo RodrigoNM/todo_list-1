@@ -6,6 +6,17 @@ class TasksController < ApplicationController
     redirect_to @board
   end
 
+  def destroy 
+    @task = @board.tasks.find(params[:id])
+    if @task.destroy
+      flash[:sucess] = "Board item was deleted."
+    else
+      flash[:error] = "Board could not be deleted."
+    end
+    redirect_to @board
+  end
+
+
 
   private
 
