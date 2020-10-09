@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EtapaTest < ActiveSupport::TestCase
+class CardsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

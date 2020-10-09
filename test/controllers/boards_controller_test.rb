@@ -17,7 +17,7 @@ class BoardsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create board" do
     assert_difference('Board.count') do
-      post boards_url, params: { board: { description: @board.description, task_id: @board.task_id } }
+      post boards_url, params: { board: { title: @board.title } }
     end
 
     assert_redirected_to board_url(Board.last)
@@ -34,7 +34,7 @@ class BoardsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update board" do
-    patch board_url(@board), params: { board: { description: @board.description, task_id: @board.task_id } }
+    patch board_url(@board), params: { board: { title: @board.title } }
     assert_redirected_to board_url(@board)
   end
 

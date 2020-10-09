@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TasksControllerTest < ActionDispatch::IntegrationTest
+class CardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -10,28 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_030113) do
+ActiveRecord::Schema.define(version: 2020_10_09_112635) do
 
   create_table "boards", force: :cascade do |t|
-    t.string "description"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string "destription"
     t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_boards_on_task_id"
-  end
-
-  create_table "etapas", force: :cascade do |t|
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_cards_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "description"
-    t.integer "etapa_id"
+    t.string "title"
+    t.integer "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["etapa_id"], name: "index_tasks_on_etapa_id"
+    t.index ["board_id"], name: "index_tasks_on_board_id"
   end
 
 end
