@@ -5,5 +5,13 @@
   <%= @board.title %>
 </p>
 
+<div id="todo_item_wrapper">
+  <%= render @board.tasks%>
+  <div id="form">
+    <%= render "tasks/form" %>
+  </div>
+</div>
+
+
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>
