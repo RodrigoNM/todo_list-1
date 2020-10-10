@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :etapas
     end
   end
+    resources :etapas
 
 
   root "boards#index"

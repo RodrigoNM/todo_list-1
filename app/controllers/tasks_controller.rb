@@ -5,6 +5,9 @@ class TasksController < ApplicationController
     @task = @board.tasks.create(task_params)
     redirect_to @board
   end
+  
+  def show
+  end
 
   def destroy 
     @task = @board.tasks.find(params[:id])
