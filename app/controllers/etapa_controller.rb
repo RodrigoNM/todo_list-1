@@ -2,7 +2,7 @@ class EtapaController < ApplicationController
   
   def create
     byebug
-    @etapa = @task.etapas.create(etapa_params)
+    @etapa = @task.id_nameid_name.create(etapa_params)
   end
 
   def destroy

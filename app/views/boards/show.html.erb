@@ -1,16 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @board.title %>
-</p>
-
-<div id="todo_item_wrapper">
-  <%= render @board.tasks%>
-  <div id="form">
-    <%= render "tasks/form" %>
+<div class="site-header bg-primary text-light font-weight-bolder">
+  <div>TODO LIST</div>
+  <p id="notice"><%= notice %></p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="card bg-primary">
+      <div class="card-body">
+        <div class="card-title font-weight-bold text-white">
+          <strong>Title:</strong>
+          <%= @board.title %>
+        </div>
+        <div id=" todo_item_wrapper">
+          <%= render @board.tasks%>
+          <div id="form">
+            <%= render "tasks/form" %>
+          </div>
+        </div>
+        <div class="btn-group">
+          <%= link_to 'Edit', edit_board_path(@board), class: "btn btn-sm text-light" %>
+          <%= link_to 'Back', boards_path , class: "btn btn-sm text-light" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Back', boards_path %>

@@ -1,8 +1,6 @@
-<div style="border: 1px solid; margin: 6px 0; padding: 10px; background: #3887d1; color: white">
-  <p>
-    <%= task.title%>
-  </p>
-  <%= render 'etapas/form'%>
+<p>
+  <%= task.title%>
+</p>
 
-  <%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"} %>
-</div>
+
+<%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"} %>
