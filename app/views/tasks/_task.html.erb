@@ -1,6 +1,6 @@
-<p>
+<p class="text-light font-weight-bold">
   <%= task.title%>
 </p>
 
 
-<%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"} %>
+<%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-light btn-sm tl-mg-b" %>

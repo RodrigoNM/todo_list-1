@@ -13,12 +13,13 @@
         <div id=" todo_item_wrapper">
           <%= render @board.tasks%>
           <div id="form">
+
             <%= render "tasks/form" %>
           </div>
         </div>
         <div class="btn-group">
-          <%= link_to 'Edit', edit_board_path(@board), class: "btn btn-sm text-light" %>
-          <%= link_to 'Back', boards_path , class: "btn btn-sm text-light" %>
+          <%= link_to 'Edit', edit_board_path(@board), class: "btn btn-sm btn-primary  text-light" %>
+          <%= link_to 'Back', boards_path , class: "btn btn-sm btn-primary text-light" %>
         </div>
       </div>
     </div>
