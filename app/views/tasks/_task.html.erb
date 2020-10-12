@@ -1,38 +1,47 @@
-<div class="container">
-
+<div class="container ">
   <% if task.completed?%>
-  <div class="row ">
-    <div class="col">
-      <div class="card-text font-weight-bold text-black " style="opacity: 0.4;">
+  <div class="row tg-mg-5">
+    <div class="col  rounded">
+       <div class="complete">
+        <%= link_to  complete_board_task_path(@board, task.id), method: :patch do %>
+          <i style="opacity: 0.4;" class="fa fa-check"></i>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-6 rounded">
+     <div class="card-text font-weight-bold text-black " style="opacity: 0.4;">
         <strike>
           <%= task.title%>
         </strike>
-      </div>
-      <div class="btn-group">
-        <div class="complete">
-          <%= link_to "Mark as Complete", complete_board_task_path(@board, task.id), method: :patch, class: "btn btn-primary btn-sm tl-mg-b"%>
-        </div>
-      </div>
-      <div class="trash">
-        <p><strike>
-            <%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-sm tl-mg-b" %>
-          </strike></p>
+      </div> 
+    </div>
+    <div class="col border rounded">
+      <div class="trash text-center ">
+        <%= link_to board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"} do%>
+        <i class="fa fa-trash"></i>
+        <%end%>
       </div>
     </div>
   </div>
   <%else%>
-  <div class=row>
-    <div class="col">
+  <div class="row tg-mg-5" >
+    <div class="col rounded">
+      <div class="complete">
+        <%= link_to complete_board_task_path(@board, task.id), method: :patch do %>
+          <i style="opacity: 0.4;" class="fa fa-check"></i>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-6 rounded">
       <div class="card-text font-weight-bold text-black">
         <%= task.title%>
       </div>
-      <div class="btn-group">
-        <div class="complete">
-          <%= link_to "Mark as Complete", complete_board_task_path(@board, task.id), method: :patch, class: "btn btn-primary btn-sm tl-mg-b"%>
-        </div>
-      </div>
-      <div class="trash">
-        <%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-sm tl-mg-b" %>
+    </div>
+    <div class="col rounded">
+       <div class="trash text-center">
+          <%= link_to board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"} do%>
+          <i class="fa fa-trash"></i>
+          <%end%>
       </div>
     </div>
   </div>
