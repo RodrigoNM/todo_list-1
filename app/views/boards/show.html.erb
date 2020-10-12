@@ -3,25 +3,20 @@
   <p id="notice"><%= notice %></p>
 </div>
 <div class="container">
+  <h1>
+    <%= @board.title %>
+  </h1>
   <div class="row">
-    <div class="card bg-primary">
-      <div class="card-body">
-        <div class="card-title font-weight-bold text-white">
-          <strong>Title:</strong>
-          <%= @board.title %>
-        </div>
-        <div id=" todo_item_wrapper">
-          <%= render @board.tasks%>
-          <div id="form">
-
-            <%= render "tasks/form" %>
-          </div>
-        </div>
-        <div class="btn-group">
-          <%= link_to 'Edit', edit_board_path(@board), class: "btn btn-sm btn-primary  text-light" %>
-          <%= link_to 'Back', boards_path , class: "btn btn-sm btn-primary text-light" %>
-        </div>
+    <div class="col">
+      <div class="card">
+        <%= render @board.tasks%>
+      </div>
+    </div>
+    <div class="col">
+      <%= render "tasks/form" %>
+      <div class="btn-group">
+        <%= link_to 'Edit', edit_board_path(@board), class: "btn btn-sm btn-primary text-light" %>
+        <%= link_to 'Back', boards_path , class: "btn btn-sm btn-primary text-light" %>
       </div>
     </div>
   </div>
-</div>
