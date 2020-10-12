@@ -1,6 +1,14 @@
-<p class="text-light font-weight-bold">
-  <%= task.title%>
-</p>
-
-
-<%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-light btn-sm tl-mg-b" %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class=" card-text font-weight-bold text-dark">
+          <%= task.title%>
+        </div>
+      </div>
+      <div class="btn-group">
+        <%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-sm tl-mg-b" %>
+      </div>
+    </div>
+  </div>
+</div>

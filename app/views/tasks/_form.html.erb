@@ -1,6 +1,6 @@
 <%= form_for([@board, @board.tasks.build]) do |f| %>
 <div class="input-group mb-3">
-  <%= f.text_field :title, placeholder: "New Todo" , class: "form-control" %>
+  <%= f.text_field :title, placeholder: "New Task" , class: "form-control" %>
   <%= f.submit 'Create', :class => 'btn btn-primary btn-outline-white'%>
 </div>
 <%end%>
