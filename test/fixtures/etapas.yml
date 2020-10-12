@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyString
+  title: MyString
+  task: one
 
 two:
-  description: MyString
+  title: MyString
+  task: two

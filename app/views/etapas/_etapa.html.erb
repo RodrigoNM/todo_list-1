@@ -1,0 +1,5 @@
+<p>
+  <%= etapa.title%>
+</p>
+
+<%= link_to "Delete", task_etapa_path(@task, etapa.id), method: :delete, data: { confirm: "Are you sure?"} %>

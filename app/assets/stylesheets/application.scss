@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.site-header {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.tl-bk-blue {
+    background-color: #026AA7;
+}
+
+.tl-mg-b {
+    margin-bottom: 5px;
+}
+
+.tg-mg-5 {
+    margin: 5px
+}

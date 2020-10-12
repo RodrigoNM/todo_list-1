@@ -1,22 +1,6 @@
-<%= form_with(model: etapa, local: true) do |form| %>
-  <% if etapa.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(etapa.errors.count, "error") %> prohibited this etapa from being saved:</h2>
+<%= form_for([@board, @board.tasks.build]) do |f| %>
 
-      <ul>
-      <% etapa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form.text_field :title, placeholder: "New etapa"%>
+<%= form.submit %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%end%>

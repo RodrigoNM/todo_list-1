@@ -14,8 +14,7 @@ class BoardsTest < ApplicationSystemTestCase
     visit boards_url
     click_on "New Board"
 
-    fill_in "Description", with: @board.description
-    fill_in "Task", with: @board.task_id
+    fill_in "Title", with: @board.title
     click_on "Create Board"
 
     assert_text "Board was successfully created"
@@ -26,8 +25,7 @@ class BoardsTest < ApplicationSystemTestCase
     visit boards_url
     click_on "Edit", match: :first
 
-    fill_in "Description", with: @board.description
-    fill_in "Task", with: @board.task_id
+    fill_in "Title", with: @board.title
     click_on "Update Board"
 
     assert_text "Board was successfully updated"
