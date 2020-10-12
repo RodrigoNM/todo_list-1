@@ -11,12 +11,13 @@
 </div>
 <% end %>
 <div class="field">
-
-  <%= form.label :title %>
+  <div class="text-white">
+    <%= form.label :title %>
+  </div>
   <%= form.text_field :title %>
 </div>
 
 <div class="actions">
-  <%= form.submit %>
+  <%= form.submit 'Submit', :class => 'btn btn-light btn-sm' %>
 </div>
 <% end %>

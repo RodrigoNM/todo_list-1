@@ -1,4 +1,6 @@
-<%= form_for([@task, @task.etapas.build]) do |f| %>
-<%= f.text_field :title, placeholder: "New etapa"%>
-<%= f.submit %>
+<%= form_for([@board, @board.tasks.build]) do |f| %>
+
+<%= form.text_field :title, placeholder: "New etapa"%>
+<%= form.submit %>
+
 <%end%>
