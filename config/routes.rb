@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   
   resources :boards do
     resources :tasks do
-      resources :etapas
+      member do
+        patch :complete
+      end
     end
   end
     resources :etapas

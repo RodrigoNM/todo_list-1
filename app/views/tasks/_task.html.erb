@@ -1,14 +1,40 @@
 <div class="container">
-  <div class="row">
+
+  <% if task.completed?%>
+  <div class="row ">
     <div class="col">
-      <div class="card">
-        <div class=" card-text font-weight-bold text-dark">
+      <div class="card-text font-weight-bold text-black " style="opacity: 0.4;">
+        <strike>
           <%= task.title%>
-        </div>
+        </strike>
       </div>
       <div class="btn-group">
+        <div class="complete">
+          <%= link_to "Mark as Complete", complete_board_task_path(@board, task.id), method: :patch, class: "btn btn-primary btn-sm tl-mg-b"%>
+        </div>
+      </div>
+      <div class="trash">
+        <p><strike>
+            <%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-sm tl-mg-b" %>
+          </strike></p>
+      </div>
+    </div>
+  </div>
+  <%else%>
+  <div class=row>
+    <div class="col">
+      <div class="card-text font-weight-bold text-black">
+        <%= task.title%>
+      </div>
+      <div class="btn-group">
+        <div class="complete">
+          <%= link_to "Mark as Complete", complete_board_task_path(@board, task.id), method: :patch, class: "btn btn-primary btn-sm tl-mg-b"%>
+        </div>
+      </div>
+      <div class="trash">
         <%= link_to "Delete", board_task_path(@board, task.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-sm tl-mg-b" %>
       </div>
     </div>
   </div>
+  <%end%>
 </div>
