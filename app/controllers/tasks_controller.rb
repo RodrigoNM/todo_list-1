@@ -4,16 +4,15 @@ class TasksController < ApplicationController
 
   def create 
     @task = @board.tasks.create(task_params)
-    redirect_to @board
+    redirect_to @board, notice: "Task was successfully created.."
   end
   
   def show
   end
 
   def destroy 
-    
     if @task.destroy
-      flash[:sucess] = "Board item was deleted."
+      flash[:alert]= "Board item was deleted."
     else
       flash[:error] = "Board could not be deleted."
     end
@@ -22,7 +21,7 @@ class TasksController < ApplicationController
 
   def complete
      @task.update_attribute(:completed_at, Time.now)
-     redirect_to @board, notice: "Todo task completed"
+     redirect_to @board, notice: "Task completed"
   end
 
   
