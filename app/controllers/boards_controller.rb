@@ -26,28 +26,23 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(board_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @board.save
-        format.html { redirect_to root_url, notice: 'Board was successfully created.' }
-        format.json { render :show, status: :created, location: @board }
+        redirect_to root_url, notice: "Board was successfully created."
       else
-        format.html { render :new }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
+    # end
   end
 
   # PATCH/PUT /boards/1
   # PATCH/PUT /boards/1.json
   def update
-    respond_to do |format|
+    # respond_to do |format|
       if @board.update(board_params)
-        format.html { redirect_to @board, notice: 'Board was successfully updated.' }
-        format.json { render :show, status: :ok, location: @board }
+        redirect_to root_url, notice: "Board was successfully updated."
       else
-        format.html { render :edit }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
-      end
+        render :edit
     end
   end
 
@@ -55,10 +50,7 @@ class BoardsController < ApplicationController
   # DELETE /boards/1.json
   def destroy
     @board.destroy
-    respond_to do |format|
-      format.html { redirect_to boards_url, notice: 'Board was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to root_url, alert: "Board was successfully destroyed."
   end
 
   private
