@@ -49,11 +49,11 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
-   if @board.tasks.destroy_all
+   if @board.tasks.empty?
       @board.destroy
       redirect_to root_url, notice: "Board was successfully destroyed."
    else
-      redirect_to root_url, alert: "Board cannot be successfully destroyed."
+      redirect_to root_url, alert: "Board cannot be destroyed, because it still has tasks."
   end
 end
   private
