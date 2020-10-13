@@ -49,10 +49,13 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
-    @board.destroy
-      redirect_to root_url, alert: "Board was successfully destroyed."
+   if @board.tasks.destroy_all
+      @board.destroy
+      redirect_to root_url, notice: "Board was successfully destroyed."
+   else
+      redirect_to root_url, alert: "Board cannot be successfully destroyed."
   end
-
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
