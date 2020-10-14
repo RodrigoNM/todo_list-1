@@ -8,11 +8,13 @@
         <%= render @board.tasks%>
       </div>
     </div>
-    <div class="col">
+
+    <div class="col-4">
       <%= render "tasks/form" %>
       <div class="btn-group">
         <%= link_to 'Edit', edit_board_path(@board), class: "btn btn-sm btn-primary text-light" %>
         <%= link_to 'Back', boards_path , class: "btn btn-sm btn-primary text-light" %>
       </div>
     </div>
+
   </div>
