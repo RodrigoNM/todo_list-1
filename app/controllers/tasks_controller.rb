@@ -12,9 +12,9 @@ class TasksController < ApplicationController
 
   def destroy 
     if @task.destroy
-      flash[:alert]= "Board item was deleted."
+      flash[:notice]= "Board item was deleted."
     else
-      flash[:error] = "Board could not be deleted."
+      flash[:alert] = "Board could not be deleted."
     end
     redirect_to @board
   end
